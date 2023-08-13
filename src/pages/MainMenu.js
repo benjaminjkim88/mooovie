@@ -1,4 +1,5 @@
 import React from "react"
+import MainButtons from "../components/MainButtons";
  
 const MainMenu =()=> {
 
@@ -20,9 +21,17 @@ const MainMenu =()=> {
             </div>
 
             <div className="nav--buttons">
-                <button className="nav--button">Write a Review</button>
-                <button className="nav--button">Search Movies</button>
-                <button className="nav--button">About Us</button>
+
+                <MainButtons
+                    buttonTitle="Write a Review"
+                />
+                <MainButtons
+                    buttonTitle="Search Movies"
+                />
+                <MainButtons
+                    buttonTitle="About Us"
+                />
+                
             </div>
         </div>
     )
