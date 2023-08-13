@@ -21,7 +21,6 @@ const MainMenu =()=> {
             </div>
 
             <div className="nav--buttons">
-
                 <MainButtons
                     buttonTitle="Write a Review"
                 />
@@ -30,8 +29,7 @@ const MainMenu =()=> {
                 />
                 <MainButtons
                     buttonTitle="About Us"
-                />
-                
+                /> 
             </div>
         </div>
     )
