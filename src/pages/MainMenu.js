@@ -1,16 +1,17 @@
 import React from "react"
 import MainButtons from "../components/MainButtons";
+import mooo from "../images/mooo.png"
  
 const MainMenu =()=> {
 
     return(
         <div>
             <div className="header">
-                <p className="logo--placeholder">*Logo*</p>
+                <img className="logo--header" src={mooo}/>
                 <h1>Mooovie: A Place to Review Movies!</h1>
 
                 <div className="image--placeholder">
-                    <p>*Picture*</p>
+                    <p>*picture*</p>
                 </div>
             </div>
 
