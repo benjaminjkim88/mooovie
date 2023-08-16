@@ -4,8 +4,7 @@ import MovieScroll from "../components/MovieScroll";
 import mooo from "../images/mooo.png"
 
 const MainMenu =()=> {
-
-    
+ 
     return(
         <div>
             <div className="header">

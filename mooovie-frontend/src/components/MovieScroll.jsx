@@ -23,7 +23,6 @@ const MovieScroll =()=> {
           .catch(error => console.error('Error:', error));
     }, []);
     
-
     return (
         <div className="movie-scroll">
           {topMovies ? (
