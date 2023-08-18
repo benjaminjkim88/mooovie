@@ -59,3 +59,7 @@ body {
     height: 70px;
     padding-right: 10px;
 }
+
+.movie-card {
+    max-width: 10ppx;
+}
