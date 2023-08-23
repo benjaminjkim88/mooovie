@@ -6,17 +6,20 @@ import {
   Body,
   Put,
   Delete,
-  Query,
 } from '@nestjs/common';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { UpdateReviewDto } from './dto/update-review.dto';
+import { ReviewsService } from './reviews.service';
 
 @Controller('reviews')
 export class ReviewsController {
+  // depends on the reviewService
+  constructor(private readonly reviewsService: ReviewsService) {}
+
   // GET reviews
   @Get()
-  getReviews(@Query('type') type: string) {
-    return [{ type }];
+  getReviews() {
+    return this.reviewsService.getAllReviews();
   }
 
   // GET one review
