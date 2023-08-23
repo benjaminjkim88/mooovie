@@ -4,18 +4,18 @@ const Movie = () => {
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState("");
 
-  useEffect(() => {
-    async function fetchReviews() {
-      try {
-        const getReviewsURL = "http://localhost:3000/reviews";
-        const response = await fetch(getReviewsURL);
-        const data = await response.json();
-        setReviews(data);
-      } catch (error) {
-        console.error("There was a problem with getting the reviews: ", error);
-      }
+  const fetchReviews = async () => {
+    try {
+      const getReviewsURL = "http://localhost:3000/reviews";
+      const response = await fetch(getReviewsURL);
+      const data = await response.json();
+      setReviews(data);
+    } catch (error) {
+      console.error("There was a problem with getting the reviews: ", error);
     }
+  };
 
+  useEffect(() => {
     fetchReviews();
   }, []);
 
@@ -30,9 +30,8 @@ const Movie = () => {
         },
         body: JSON.stringify({ description: newReview }),
       });
-      const data = await response.json();
 
-      setReviews([...reviews, data]);
+      fetchReviews();
       setNewReview("");
     } catch (error) {
       console.error("There was a problem adding a review: ", error);
