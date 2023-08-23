@@ -19,4 +19,8 @@ export class ReviewsService {
     getAllReviews(): { description: string }[] {
         return this.reviews;
     }
+
+    addReview(description: string): void {
+        this.reviews.push({ description });
+    }
 }

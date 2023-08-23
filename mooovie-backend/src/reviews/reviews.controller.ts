@@ -7,7 +7,6 @@ import {
   Put,
   Delete,
 } from '@nestjs/common';
-import { CreateReviewDto } from './dto/create-review.dto';
 import { UpdateReviewDto } from './dto/update-review.dto';
 import { ReviewsService } from './reviews.service';
 
@@ -33,10 +32,8 @@ export class ReviewsController {
 
   // POST(create) a review
   @Post()
-  createReview(@Body() createReviewDto: CreateReviewDto) {
-    return {
-      username: createReviewDto.username,
-    };
+  createReview(@Body('description') description: string) {
+    this.reviewsService.addReview(description);
   }
 
   // PUT(update) a review
