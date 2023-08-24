@@ -28,10 +28,11 @@ const App = () => {
             )
         }
         />
+        <Route path="/movie-example" element={<MoviePage />} />
         </Routes>
       </div>
       
     );
   };
   
-  export default App;
+export default App;
