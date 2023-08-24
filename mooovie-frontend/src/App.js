@@ -1,17 +1,38 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import MainMenu from "./pages/MainMenu";
-import MoviePage from "./pages/Movie";
+import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import MainMenu from "./pages/MainMenu"
+import SignUp from './components/SignUp';
+import { useState } from 'react';
 
 const App = () => {
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<MainMenu />} />
-        <Route path="/movie-example" element={<MoviePage />} />
-      </Routes>
-    </div>
-  );
-};
 
+  const [isLoggedIn, setIsLogged] = useState(false);
+  const nav = useNavigate();
+
+  const handleSignIn = () => {
+    setIsLogged(true);
+    nav('/');
+  };
+
+    return (
+      <div>
+        <Routes>
+        <Route
+        path='/'
+        element={
+          isLoggedIn ? (
+            <MainMenu />
+          ) : (
+
+            <SignUp onSignIn={handleSignIn} /> //SignIn passed as prop
+            )
+        }
+        />
+        <Route path="/movie-example" element={<MoviePage />} />
+        </Routes>
+      </div>
+      
+    );
+  };
+  
 export default App;

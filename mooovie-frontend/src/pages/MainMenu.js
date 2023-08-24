@@ -2,9 +2,11 @@ import React, { useState, useEffect} from "react"
 import MainButtons from "../components/MainButtons";
 import MovieScroll from "../components/MovieScroll";
 import mooo from "../images/mooo.png"
+import SignUp from "../components/SignUp";
 
 const MainMenu =()=> {
  
+    const[showSignUp, setShowSignUp] = useState(true);
     return(
         <div>
             <div className="header">
@@ -29,8 +31,9 @@ const MainMenu =()=> {
                     buttonTitle="About Us"
                 /> 
             </div>
+            {showSignUp && <SignUp />}
         </div>
-    )
-}
+    );
+};
 
 export default MainMenu;
