@@ -1,0 +1,82 @@
+/*image for background*/
+.signup-page{
+    background-image: url('../images/spots.jpg');
+    background-color: #cccccc;
+}
+
+/*main styler*/
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ccc;
+    
+  }
+
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /*start of animation styling*/
+  .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fbfbfc;
+    color: #0a0a0a;
+    border: 2px solid #000;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+
+  .loginCreds {
+    position: relative;
+    text-align: center;
+  }
+
+  .label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  /*used to select before targets from label. Used to create visual effects.*/
+  .label::before {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px; 
+    height: 10px; 
+    background-color: #0a0a0a; 
+    border-radius: 50% 50% 0 0;
+    animation: hoovesMove 1s infinite; /*cause the duration of the movement to be one second, for infinity
+    AND BEYOND*/
+  }
+
+  /*used to make the hooves to appear to be moving*/
+  @keyframes hoovesMove {
+    0%, 100% {
+      transform: translateX(-50%);
+    }
+    50% {
+      transform: translateX(calc(-50% + 5px));
+    }
+  }
