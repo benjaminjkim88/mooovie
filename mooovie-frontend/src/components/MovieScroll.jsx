@@ -6,19 +6,23 @@ const MovieScroll =()=> {
     const [topMovies, setTopMovies] = useState([]);
 
     useEffect(() => {
-        const apiKey = process.env.REACT_APP_API_KEY;
+        const apiKey = process.env.REACT_APP_API_TOKEN
         const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
         const options = {
+          method:'GET',
           headers: {
             accept: 'application/json',
             Authorization: `Bearer ${apiKey}`
           }
         };
+
+        console.log("keyyyyy")
+        console.log(process.env.REACT_APP_API_TOKEN)
     
         fetch(url, options)
           .then(response => response.json())
           .then(jsonData => {
-            setTopMovies(jsonData.results); // Assuming the API response has a 'results' property
+            setTopMovies(jsonData.results);
           })
           .catch(error => console.error('Error:', error));
     }, []);
@@ -28,10 +32,8 @@ const MovieScroll =()=> {
           {topMovies ? (
             topMovies.map(film => (
               <MovieCard 
-                key={'https://api.themoviedb.org/3/trending/movie/day?language=en-US' + 
-                        film.id}
-                poster={'https://api.themoviedb.org/3/trending/movie/day?language=en-US' + 
-                        film.poster_path}
+                key={film.id}
+                poster={`https://image.tmdb.org/t/p/original${film.poster_path}`}
                 title={film.original_title}
               />
             ))

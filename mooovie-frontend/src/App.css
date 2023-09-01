@@ -28,13 +28,32 @@ body {
     align-items: center;
     background: black;
     margin: 50px 100px;
-    height: 200px;
-    border-radius: 15px;;
+    height: 250px;
+    border-radius: 25px;
+    gap: 15px;
+    overflow: auto;
+    padding-left: 570px
 }
+
+.movie-scroll::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 15px; /* Set the border radius */
+  }
 
 .movie-scroll > p {
     color: darkgray;
     font-size: 600%;
+}
+
+.movie-poster {
+    max-height: 100px;
+    gap: 10px;
+    border-radius: 50px;
+}
+
+.movie-title {
+    color: darkgray;
+    font-size: 12px;
 }
 
 .nav--buttons {
